@@ -1,0 +1,61 @@
+PUT _template/weather-data
+{
+  "template":"weather-data*",
+"mappings": {
+      "logs": {
+        "properties": {
+          "@timestamp": {
+            "type": "date",
+            "format": "strict_date_optional_time||epoch_millis"
+          },
+          "@version": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "daylight_hours": {
+            "type": "float"
+          },
+          "host": {
+            "type": "string"
+          },
+          "max_temperature": {
+            "type": "float"
+          },
+          "message": {
+            "type": "string"
+          },
+          "min_temperature": {
+            "type": "float"
+          },
+          "month": {
+            "type": "string",
+            "index":"not_analyzed"
+          },
+          "rain": {
+            "type": "float"
+          },
+          "snow_ammount": {
+            "type": "float"
+          },
+          "snow_depth": {
+            "type": "float"
+          },
+          "year": {
+            "type": "string",
+            "index":"not_analyzed"
+          },
+          "year-month": {
+            "type": "string",
+            "index":"not_analyzed"
+          },
+          "year-month-day": {
+            "type": "date",
+            "format": "yyyy/MM/dd HH:mm:ss||yyyy/MM/dd||epoch_millis"
+          }
+        }
+      }
+    }
+}
